@@ -3,6 +3,10 @@
 // Security Question + Answer Hashing (Client-side)
 // NOTE: This is NOT real security. Real security needs backend.
 // =============================
+const SUPABASE_URL = "https://SEU-PROJETO.supabase.co";
+const SUPABASE_KEY = "SUA-ANON-KEY";
+
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 function mm_hash(str){
   // Simple hash (FNV-1a style) for demo. Not cryptographically secure.
