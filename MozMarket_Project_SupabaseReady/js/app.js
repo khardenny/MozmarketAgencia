@@ -2381,6 +2381,10 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
       regForm.appendChild(wrap);
       regForm.appendChild(wrap2);
+      async function logoutUser(){
+  await supabase.auth.signOut();
+  alert("Saiu da conta");
+}
     }
   }
 });
