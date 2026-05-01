@@ -3,6 +3,26 @@
 // Security Question + Answer Hashing (Client-side)
 // NOTE: This is NOT real security. Real security needs backend.
 // =============================
+async function loginUser(){
+
+  // 1. pegar valores do formulário
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  // 2. enviar para Supabase
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  // 3. verificar resultado
+  if(error){
+    alert("Erro: " + error.message);
+  } else {
+    alert("Login feito com sucesso!");
+    console.log(data.user);
+  }
+}
 const SUPABASE_URL = "https://SEU-PROJETO.supabase.co";
 const SUPABASE_KEY = "SUA-ANON-KEY";
 
