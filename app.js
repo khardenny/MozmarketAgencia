@@ -48,6 +48,26 @@ function mm_getSecurityQuestion(email){
   }
 }
 
+async function criarPedido() {
+  const { data, error } = await supabase
+    .from('pedidos')
+    .insert([
+      {
+        nome: "Cliente",
+        telefone: "840000000",
+        produto: "Cartão de visita",
+        quantidade: 100,
+        preco: 500
+      }
+    ]);
+
+  if (error) {
+    console.error("Erro:", error);
+  } else {
+    alert("Pedido enviado!");
+    console.log(data);
+  }
+}
 const WA = '258835147466';
 
         // ============================================================
