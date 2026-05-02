@@ -3,7 +3,8 @@
 // Security Question + Answer Hashing (Client-side)
 // NOTE: This is NOT real security. Real security needs backend.
 // =============================
-
+const supabaseUrl = "https://vdixmavglheoqjpvysdi.supabase.co";
+const supabase = window.supabase.createClient(sb_publishable_S9Qaex8jg5n7EN5c2d1PSg_WoRbUOOI);
 function mm_hash(str){
   // Simple hash (FNV-1a style) for demo. Not cryptographically secure.
   let h = 2166136261;
